@@ -5,10 +5,7 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.JsonGenerator;
-import com.google.api.client.json.JsonParser;
 import com.google.api.client.json.gson.GsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
 import com.nodian.nodian_backend.jwt.JWTUtils;
 import com.nodian.nodian_backend.model.account.Account;
 import com.nodian.nodian_backend.payload.request.IdTokenRequestDto;
@@ -20,8 +17,7 @@ import org.springframework.security.oauth2.client.oidc.userinfo.OidcUserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.*;
-import java.nio.charset.Charset;
+import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.Arrays;
 import java.util.Collection;
@@ -39,7 +35,7 @@ public class AccountService extends OidcUserService {
   private GoogleIdTokenVerifier verifier; // null here
 
   @Value("${spring.security.oauth2.client.registration.google.client-id}")
-  private  String CLIENT_ID;
+  private String CLIENT_ID;
 
   @PostConstruct
   public void init() {
@@ -91,9 +87,16 @@ public class AccountService extends OidcUserService {
       String email = payload.getEmail();
       String pictureUrl = (String) payload.get("picture");
 
-      return new Account(firstName, lastName, email, pictureUrl);
+      return new Account(email, pictureUrl, firstName, lastName);
     } catch (GeneralSecurityException | IOException e) {
       return null;
     }
+  }
+
+  public Account getCurrentAccountInfo(String authToken) {
+    String jwtToken = authToken.split(" ")[1];
+    String email = jwtUtils.getEmailFromToken(jwtToken);
+    Account account = accountRepository.findByEmail(email);
+    return account;
   }
 }

@@ -3,24 +3,15 @@ package com.nodian.nodian_backend.controller.login;
 import com.nodian.nodian_backend.base.BaseController;
 import com.nodian.nodian_backend.base.baseResponse.SuccessResponse;
 import com.nodian.nodian_backend.jwt.JWTUtils;
-import com.nodian.nodian_backend.model.account.Account;
 import com.nodian.nodian_backend.payload.request.IdTokenRequestDto;
 import com.nodian.nodian_backend.payload.response.LoginSuccessResponse;
 import com.nodian.nodian_backend.service.account.AccountService;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
-import org.springframework.security.oauth2.core.oidc.user.OidcUser;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,4 +46,10 @@ public class LoginController extends BaseController {
 
     return ResponseEntity.ok(new SuccessResponse(new LoginSuccessResponse(authToken)));
   }
+
+  @RequestMapping("/home")
+  String home() {
+    return "Hello HAHA World!";
+  }
+
 }

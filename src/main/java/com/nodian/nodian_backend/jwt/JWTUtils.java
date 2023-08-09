@@ -49,4 +49,14 @@ public class JWTUtils {
       return null;
     }
   }
+
+  public String getEmailFromToken(String token) {
+    try {
+      String email = Jwts.parser().setSigningKey(SECRETE_TOKEN).parseClaimsJws(token).getBody().getSubject();
+      return email;
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+      return e.getMessage();
+    }
+  }
 }
