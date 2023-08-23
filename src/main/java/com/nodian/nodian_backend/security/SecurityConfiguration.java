@@ -1,8 +1,10 @@
 package com.nodian.nodian_backend.security;
 
 import com.nodian.nodian_backend.jwt.JWTRequestFilter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,15 +16,12 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true)
+@RequiredArgsConstructor
 public class SecurityConfiguration {
 
   private final JWTRequestFilter jwtRequestFilter;
 
-  public SecurityConfiguration(JWTRequestFilter jwtRequestFilter) {
-    this.jwtRequestFilter = jwtRequestFilter;
-  }
-
+  private final AuthenticationProvider authenticationProvider;
 
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -30,8 +29,11 @@ public class SecurityConfiguration {
         .csrf(csrf -> csrf.disable())
         .cors(cors -> cors.disable())
         .authorizeHttpRequests(authz -> authz
-            .requestMatchers(new AntPathRequestMatcher("/api/**")).permitAll()
+            .requestMatchers(new AntPathRequestMatcher("/api/login/**")).permitAll()
+            .anyRequest().authenticated()
         )
+        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .authenticationProvider(authenticationProvider)
         .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
     ;
 

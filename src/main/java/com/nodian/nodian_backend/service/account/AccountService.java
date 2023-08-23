@@ -13,6 +13,7 @@ import com.nodian.nodian_backend.repository.account.AccountRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.oauth2.client.oidc.userinfo.OidcUserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -67,7 +68,7 @@ public class AccountService extends OidcUserService {
 
   @Transactional
   public Account createOrUpdateUser(Account account) {
-    Account existingAccount = accountRepository.findByEmail(account.getEmail());
+    Account existingAccount = accountRepository.findByEmail(account.getEmail()).orElseThrow(() -> new UsernameNotFoundException("User not found"));
     if (existingAccount == null) {
       accountRepository.save(account);
       return account;
@@ -96,7 +97,7 @@ public class AccountService extends OidcUserService {
   public Account getCurrentAccountInfo(String authToken) {
     String jwtToken = authToken.split(" ")[1];
     String email = jwtUtils.getEmailFromToken(jwtToken);
-    Account account = accountRepository.findByEmail(email);
+    Account account = accountRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not found"));
     return account;
   }
 }

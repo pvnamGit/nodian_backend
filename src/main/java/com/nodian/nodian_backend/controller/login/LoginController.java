@@ -6,6 +6,7 @@ import com.nodian.nodian_backend.jwt.JWTUtils;
 import com.nodian.nodian_backend.payload.request.IdTokenRequestDto;
 import com.nodian.nodian_backend.payload.response.LoginSuccessResponse;
 import com.nodian.nodian_backend.service.account.AccountService;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -27,10 +28,6 @@ public class LoginController extends BaseController {
   @Autowired
   private AccountService accountService;
 
-  private AuthenticationManager authenticationManager;
-
-  private JWTUtils jwtUtils;
-
 
   @PostMapping("/login/oauth/google")
   public ResponseEntity<?> LoginWithGoogleOauth2(@RequestBody IdTokenRequestDto body, HttpServletResponse response) throws GeneralSecurityException, IOException {
@@ -48,6 +45,7 @@ public class LoginController extends BaseController {
   }
 
   @RequestMapping("/home")
+  @RolesAllowed("USER")
   String home() {
     return "Hello HAHA World!";
   }
