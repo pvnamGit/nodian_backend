@@ -27,6 +27,7 @@ public class RepoService {
   }
 
   public Repo[] getListReposByOwner () {
+    System.out.println(currentUser.getCurrentUser());
     return repoRepository.findByOwner(currentUser.getCurrentUser()).orElse(null);
   }
 
