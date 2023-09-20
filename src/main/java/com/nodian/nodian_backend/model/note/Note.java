@@ -7,10 +7,7 @@ import com.nodian.nodian_backend.model.account.Account;
 import com.nodian.nodian_backend.model.folder.Folder;
 import com.nodian.nodian_backend.model.repo.Repo;
 import jakarta.annotation.Nullable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinColumns;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +20,7 @@ public class Note extends BaseModel {
     
     private String name;
     @Nullable
+    @Column(columnDefinition = "TEXT")
     private String content = "";
     
     @Nullable
