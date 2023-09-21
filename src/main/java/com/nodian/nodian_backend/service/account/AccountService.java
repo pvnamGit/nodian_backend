@@ -59,8 +59,9 @@ public class AccountService extends OidcUserService {
 
   public String loginOAuthGoogle(IdTokenRequestDto requestBody) {
     Account account = verifyIDToken(requestBody.getIdToken());
+    System.out.println(account);
     if (account == null) {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("Can't validate the request token, please check");
     }
     account = createOrUpdateUser(account);
     return jwtUtils.generateTokenFromEmail(account);
@@ -83,6 +84,7 @@ public class AccountService extends OidcUserService {
         return null;
       }
       GoogleIdToken.Payload payload = idTokenObj.getPayload();
+      System.out.println(payload);
       String firstName = (String) payload.get("given_name");
       String lastName = (String) payload.get("family_name");
       String email = payload.getEmail();
