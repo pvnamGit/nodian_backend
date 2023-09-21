@@ -45,7 +45,6 @@ public class LoginController extends BaseController {
   }
 
   @RequestMapping("/home")
-  @RolesAllowed("USER")
   String home() {
     return "Hello HAHA World!";
   }

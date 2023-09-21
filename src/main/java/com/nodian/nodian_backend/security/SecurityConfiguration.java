@@ -34,6 +34,7 @@ public class SecurityConfiguration {
         .cors(cors -> corsConfigurationSource())
         .authorizeHttpRequests(authz -> authz
             .requestMatchers(new AntPathRequestMatcher("/api/login/**")).permitAll()
+                    .requestMatchers(new AntPathRequestMatcher("/api/home/**")).permitAll()
             .anyRequest().authenticated()
         )
         .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
