@@ -69,8 +69,9 @@ public class AccountService extends OidcUserService {
 
   @Transactional
   public Account createOrUpdateUser(Account account) {
-    Account existingAccount = accountRepository.findByEmail(account.getEmail()).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    Account existingAccount = accountRepository.findByEmail(account.getEmail()).orElse(null);
     if (existingAccount == null) {
+      System.out.println("Create Here");
       accountRepository.save(account);
       return account;
     }
