@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.nodian.nodian_backend.NodianBackendApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-21T05:57:16" hostname="nam-Nitro-AN515-55" time="0.602">
+<testsuite name="com.nodian.nodian_backend.NodianBackendApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-21T06:05:44" hostname="nam-Nitro-AN515-55" time="0.457">
   <properties/>
-  <testcase name="contextLoads()" classname="com.nodian.nodian_backend.NodianBackendApplicationTests" time="0.602"/>
+  <testcase name="contextLoads()" classname="com.nodian.nodian_backend.NodianBackendApplicationTests" time="0.457"/>
   <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
-12:57:09.144 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nodian.nodian_backend.NodianBackendApplicationTests]: NodianBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-12:57:09.381 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nodian.nodian_backend.NodianBackendApplication for test class com.nodian.nodian_backend.NodianBackendApplicationTests
+13:05:39.007 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.nodian.nodian_backend.NodianBackendApplicationTests]: NodianBackendApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:05:39.123 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.nodian.nodian_backend.NodianBackendApplication for test class com.nodian.nodian_backend.NodianBackendApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,22 +14,22 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.1.2)
 
-2023-09-21T12:57:09.908+07:00  INFO 141422 --- [    Test worker] c.n.n.NodianBackendApplicationTests      : Starting NodianBackendApplicationTests using Java 17.0.8.1 with PID 141422 (started by nam in /home/nam/apps/nodian/nodian_backend)
-2023-09-21T12:57:09.912+07:00  INFO 141422 --- [    Test worker] c.n.n.NodianBackendApplicationTests      : The following 1 profile is active: "dev"
-2023-09-21T12:57:10.870+07:00  INFO 141422 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-09-21T12:57:11.144+07:00  INFO 141422 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 262 ms. Found 4 JPA repository interfaces.
-2023-09-21T12:57:12.553+07:00  INFO 141422 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2023-09-21T12:57:12.620+07:00  INFO 141422 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
-2023-09-21T12:57:12.857+07:00  INFO 141422 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-09-21T12:57:12.902+07:00  INFO 141422 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
-2023-09-21T12:57:12.905+07:00  INFO 141422 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-09-21T12:57:13.029+07:00  INFO 141422 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-21T12:57:13.180+07:00  INFO 141422 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-09-21T12:57:13.193+07:00  INFO 141422 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-09-21T12:57:13.445+07:00  INFO 141422 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@342723a3
-2023-09-21T12:57:13.447+07:00  INFO 141422 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-09-21T12:57:13.747+07:00  INFO 141422 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-09-21T12:57:14.418+07:00  INFO 141422 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-21T13:05:39.540+07:00  INFO 142904 --- [    Test worker] c.n.n.NodianBackendApplicationTests      : Starting NodianBackendApplicationTests using Java 17.0.8.1 with PID 142904 (started by nam in /home/nam/apps/nodian/nodian_backend)
+2023-09-21T13:05:39.543+07:00  INFO 142904 --- [    Test worker] c.n.n.NodianBackendApplicationTests      : The following 1 profile is active: "dev"
+2023-09-21T13:05:40.303+07:00  INFO 142904 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-21T13:05:40.469+07:00  INFO 142904 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 157 ms. Found 4 JPA repository interfaces.
+2023-09-21T13:05:40.874+07:00  INFO 142904 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-09-21T13:05:40.903+07:00  INFO 142904 --- [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2023-09-21T13:05:41.075+07:00  INFO 142904 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-21T13:05:41.131+07:00  INFO 142904 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-09-21T13:05:41.133+07:00  INFO 142904 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-21T13:05:41.271+07:00  INFO 142904 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-21T13:05:41.382+07:00  INFO 142904 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-21T13:05:41.394+07:00  INFO 142904 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-21T13:05:41.627+07:00  INFO 142904 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30fa8a6b
+2023-09-21T13:05:41.629+07:00  INFO 142904 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-21T13:05:41.928+07:00  INFO 142904 --- [    Test worker] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-21T13:05:42.627+07:00  INFO 142904 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 Hibernate: alter table if exists account alter column created_date set data type timestamp(6)
 Hibernate: alter table if exists account alter column updated_date set data type timestamp(6)
 Hibernate: alter table if exists folder alter column created_date set data type timestamp(6)
@@ -39,10 +39,10 @@ Hibernate: alter table if exists note alter column updated_date set data type ti
 Hibernate: alter table if exists note alter column content set data type TEXT
 Hibernate: alter table if exists repo alter column created_date set data type timestamp(6)
 Hibernate: alter table if exists repo alter column updated_date set data type timestamp(6)
-2023-09-21T12:57:14.554+07:00  INFO 141422 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-09-21T12:57:15.357+07:00  WARN 141422 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-09-21T12:57:15.478+07:00  INFO 141422 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4512f5f1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a22e7e2, org.springframework.security.web.context.SecurityContextHolderFilter@23d0f6be, org.springframework.security.web.header.HeaderWriterFilter@4f2a0909, org.springframework.web.filter.CorsFilter@3bfead8d, org.springframework.security.web.authentication.logout.LogoutFilter@77e24d3c, com.nodian.nodian_backend.jwt.JWTRequestFilter@6c75c5e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45c10678, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e834a5b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5799b8a2, org.springframework.security.web.session.SessionManagementFilter@4615bc00, org.springframework.security.web.access.ExceptionTranslationFilter@65067d37, org.springframework.security.web.access.intercept.AuthorizationFilter@4cf46574]
-2023-09-21T12:57:16.571+07:00  INFO 141422 --- [    Test worker] c.n.n.NodianBackendApplicationTests      : Started NodianBackendApplicationTests in 7.035 seconds (process running for 8.572)
+2023-09-21T13:05:42.747+07:00  INFO 142904 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-21T13:05:43.550+07:00  WARN 142904 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-21T13:05:43.662+07:00  INFO 142904 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5799b8a2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f662dd, org.springframework.security.web.context.SecurityContextHolderFilter@4ad57db1, org.springframework.security.web.header.HeaderWriterFilter@5e6ad84c, org.springframework.web.filter.CorsFilter@38568876, org.springframework.security.web.authentication.logout.LogoutFilter@3a641f6, com.nodian.nodian_backend.jwt.JWTRequestFilter@39c93af6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53bc6492, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19240b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@760ac834, org.springframework.security.web.session.SessionManagementFilter@23d0f6be, org.springframework.security.web.access.ExceptionTranslationFilter@34947355, org.springframework.security.web.access.intercept.AuthorizationFilter@4512f5f1]
+2023-09-21T13:05:44.741+07:00  INFO 142904 --- [    Test worker] c.n.n.NodianBackendApplicationTests      : Started NodianBackendApplicationTests in 5.476 seconds (process running for 7.108)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
