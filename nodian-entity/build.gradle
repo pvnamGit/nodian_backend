@@ -1,0 +1,6 @@
+plugins {
+    id 'java-library'
+}
+bootJar {
+    mainClass = 'com.nodian.application.NodianCoreApplication'
+}

@@ -1,9 +1,14 @@
 pluginManagement {
-	repositories {
-		gradlePluginPortal()
-        mavenCentral()
-		google()
-		maven { url "https://plugins.gradle.org/m2/" }
-	}
+    repositories {
+        gradlePluginPortal()
+    }
 }
-rootProject.name = 'nodian_backend'
+
+rootProject.name = 'nodian-core'
+
+include 'nodian-adapter'
+include 'nodian-entity'
+include 'nodian-usecase'
+include 'nodian-infrastructure'
+include 'nodian-application'
+
