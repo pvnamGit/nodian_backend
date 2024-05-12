@@ -32,3 +32,11 @@ out/
 
 ### VS Code ###
 .vscode/
+
+.gradle
+build
+nodian-adapter/build
+nodian-application/build
+nodian-entity/build
+nodian-infrastructure/build
+nodian-usecase/build
