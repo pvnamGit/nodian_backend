@@ -33,7 +33,6 @@ out/
 ### VS Code ###
 .vscode/
 
-.gradle
 build
 nodian-adapter/build
 nodian-application/build
